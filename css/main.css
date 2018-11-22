@@ -1,3 +1,7 @@
+:root {
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,10 +12,16 @@ body {
     font-family: 'Lato', sans-serif;
     color: #333;
     font-size: 18px;
+    background: #ffffff;
 }
 
 h1 {
     font-size: 240%;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 200%;
     font-weight: 700;
 }
 
@@ -21,10 +31,8 @@ h1 {
     grid-template-areas:
         "header header"
         "hero hero"
+        "about about"
         "gallery gallery";
-    position: absolute;
-    left: 10%;
-    right: 10%;
 }
 
 /* NAVIGATION BAR CONTAINER */
@@ -84,6 +92,7 @@ h1 {
     background: url(img/devbg.jpeg);
     background-size: cover;
     background-position: center;
+    box-shadow: var(--shadow);
 }
 
 .hero-text {
@@ -97,16 +106,16 @@ h1 {
 }
 
 .button-container {
-display: flex;
+    display: flex;
 }
 
 .hero-btn,
 .hero-btn-ghost {
     margin-top: 20px;
     text-decoration: none;
-    padding:  10px 10px;
+    padding: 10px 10px;
     text-transform: uppercase;
-  
+
 }
 
 .hero-btn {
@@ -129,18 +138,48 @@ display: flex;
     color: white;
 }
 
+/* ABOUT ME SECTION */
+
+.about-me {
+    grid-area: about;
+    grid-template-columns: 60% 20%;
+    display: grid;
+    grid-template-areas:
+        " about-text about-img";
+    background: #f6f6f6;
+    min-height: 400px;
+    box-shadow: var(--shadow);
+    align-items: center;
+}
+
+.about-text {
+    grid-area: about-text;
+    text-align: center;
+    padding-left: 25%;
+    line-height: 25px;
+}
+
+.about-img {
+    grid-area: about-img;
+    padding-left: 10%;
+}
+
+.about-img img {
+    width: 100%;
+}
+
 /* IMAGE GALLERY */
 .gallery {
     grid-area: gallery;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top : 15px;
 }
 
 .gallery img {
     padding: 10px 10px;
-    background: #FAFAFA;
+    background: #ffffff;
+    box-shadow: var(--shadow);
 }
 
 /* FOOTER */
