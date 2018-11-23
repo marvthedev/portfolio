@@ -1,5 +1,7 @@
 :root {
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --primary: #badc58;
+    --hover: #66801b;
 }
 
 * {
@@ -15,6 +17,7 @@ body {
     background: #ffffff;
 }
 
+/* HEADINGS */
 h1 {
     font-size: 240%;
     font-weight: 700;
@@ -25,6 +28,21 @@ h2 {
     font-weight: 700;
 }
 
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #badc58;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 150%;
+    font-weight: 700;
+}
+
 /* GRID CONTAINER */
 .grid {
     display: grid;
@@ -32,7 +50,9 @@ h2 {
         "header header"
         "hero hero"
         "about about"
-        "gallery gallery";
+        "latest-work latest-work"
+        "gallery gallery"
+        "footer footer";
 }
 
 /* NAVIGATION BAR CONTAINER */
@@ -42,7 +62,7 @@ h2 {
     height: 70px;
     justify-content: center;
     align-items: center;
-    background: #1dd1a1;
+    background: #badc58;
     padding: 0.25rem;
 }
 
@@ -79,7 +99,7 @@ h2 {
 }
 
 .logo img {
-    max-height: 100%;
+    height: 100%;
 }
 
 /* HERO */
@@ -119,22 +139,22 @@ h2 {
 }
 
 .hero-btn {
-    background: #1dd1a1;
+    background: #badc58;
     color: white;
 }
 
 .hero-btn-ghost {
     margin-left: 5px;
-    border: solid 0.25px #1dd1a1;
-    color: #1dd1a1;
+    border: solid 0.25px #badc58;
+    color: #badc58;
 }
 
 .hero-btn:hover {
-    background: #00a081;
+    background: #66801b;
 }
 
 .hero-btn-ghost:hover {
-    background: #00a081;
+    background: #66801b;
     color: white;
 }
 
@@ -154,6 +174,7 @@ h2 {
 
 .about-text {
     grid-area: about-text;
+    margin: auto;
     text-align: center;
     padding-left: 25%;
     line-height: 25px;
@@ -165,30 +186,156 @@ h2 {
 }
 
 .about-img img {
-    width: 100%;
+    width: 125%;
+}
+
+.about-me h3 {
+    margin-bottom: 5px;
 }
 
 /* IMAGE GALLERY */
 .gallery {
     grid-area: gallery;
     display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    background: #f6f6f6;
+    box-shadow: var(--shadow);
+    padding-bottom: 30px;
 }
 
-.gallery img {
+.gallery-text {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.odin-pics {
     padding: 10px 10px;
-    background: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+.odin-pics img {
+    width: 100%;
+}
+
+/* LATEST WORK */
+.latest-work {
+    grid-area: latest-work;
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-work h2,
+p {
+    margin: auto;
+    margin-top: 40px;
+}
+
+.work-boxes {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 5px;
+}
+
+.work-box {
+    margin: auto;
+    text-align: center;
+    background: #f6f6f6;
+    padding: 1.5rem 2rem;
     box-shadow: var(--shadow);
+    margin: 20px 20px;
+}
+
+.work-box img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.work-box p {
+    margin-top: 10px;
 }
 
 /* FOOTER */
-/* .footer {
+.footer {
     grid-area: footer;
     display: grid;
-    grid-template-columns: 100%;
-    align-items: center;
-    background: #1dd1a1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "footer-about footer-about footer-contact"
+        "social-icons social-icons footer-contact"
+        "copyright copyright copyright";
+    background: #333;
     color: white;
-    padding: 10px;
-} */
+    max-height: 100vh;
+    padding-top: 40px;
+}
+
+.footer-about {
+    grid-area: footer-about;
+    padding-left: 40px;
+    line-height: 30px;
+}
+
+.footer-contact {
+    grid-area: footer-contact;
+    text-align: center;
+}
+
+.footer-contact h3 {
+    color: var(--primary);
+}
+
+.social-icons {
+    grid-area: social-icons;
+    margin: 30px 30px;
+}
+
+.copyright {
+    grid-area: copyright;
+    text-align: center;
+}
+
+/* "BACK TO TOP" Link */
+.copyright a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    color: var(--hover);
+}
+
+/* ICONS */
+.fab,
+.fas {
+    font-size: 2rem;
+    margin: 0 5px;
+}
+
+/* COLOR ICONS */
+.fa-rss,
+.fa-envelope,
+.fa-phone,
+.fa-map-marker-alt {
+    color: #badc58;
+}
+
+/* ICON SIZING */
+.fa-phone,
+.fa-map-marker-alt {
+    font-size: 1rem;
+}
+
+/* COLOR TEXT WITH PRIMARY COLOR */
+.colored-text {
+    color: var(--primary);
+}
