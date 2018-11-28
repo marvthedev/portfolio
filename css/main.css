@@ -35,6 +35,7 @@ h2:after {
     width: 100px;
     margin: 0 auto;
     margin-top: 20px;
+    background-color: #00A081;
 }
 
 h3 {
@@ -54,7 +55,12 @@ h3 {
         "footer footer";
 }
 
-/* NAVIGATION BAR CONTAINER */
+/* 
+======================================
+           HEADER & NAVIGATION 
+======================================
+*/
+/* Default Styles BEGIN */
 .header {
     grid-area: header;
     display: flex;
@@ -65,7 +71,6 @@ h3 {
     z-index: 999;
 }
 
-/* NAVIGATION LINK ON THE RIGHT */
 .main-nav {
     grid-area: main-nav;
     align-self: center;
@@ -118,7 +123,6 @@ h3 {
     display: block;
 }
 
-/* LOGO ON NAVIGATION BAR */
 .logo {
     height: 60px;
     width: 60px;
@@ -128,8 +132,62 @@ h3 {
 .logo img {
     height: 100%;
 }
+/* Default Styles END */
 
-/* HERO */
+/* Styles for smaller screens BEGIN */
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 100%;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        background: rgba(186, 220, 88, 0.95);
+        display: none;
+        padding-top: 10px;
+    }
+
+    .main-nav li {
+        display: block;
+        font-size: 100%;
+        font-weight: 700;
+    }
+
+    .main-nav a:hover {
+        color: #00A081;
+    }
+
+    .main-nav li:hover {
+        border-bottom: 0;
+        transition: border-bottom 0.3s;
+    }
+
+    .toggle-label {
+        display: flex;
+    }
+
+    .toggle-label:hover {
+        color: #00A081;
+    }
+
+    .nav-toggle:checked~.main-nav {
+        display: block;
+    }
+}
+/* Styles for smaller screens END */
+
+
+/* 
+======================================
+           HERO SECTION 
+======================================
+*/
+/* Default styles BEGIN */
 .hero-container {
     display: flex;
     align-items: center;
@@ -146,10 +204,14 @@ h3 {
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
     color: white;
     padding: 20px 20px;
+    text-align: center;
+}
+
+.hero-text p {
+    margin: 10px;
 }
 
 .button-container {
@@ -184,9 +246,35 @@ h3 {
     background: #66801b;
     color: white;
 }
+/* Default styles END */
 
-/* ABOUT ME SECTION */
+/* Styles for smaller screens BEGIN */
+@media only screen and (max-width: 600px) {
+    .hero-container {
+        padding-top: 50px;
+    }
 
+    .hero-text {
+        height: 350px;
+    }
+
+    .hero-text h1 {
+        line-height: 45px;
+    }
+
+    .hero-text p {
+        line-height: 25px;
+    }
+}
+/* Styles for smaller screens END */
+
+/* 
+======================================
+           WHO AM I SECTION 
+======================================
+*/
+
+/* Default Styles BEGIN */
 .about-me {
     grid-area: about;
     grid-template-columns: 60% 20%;
@@ -194,9 +282,10 @@ h3 {
     grid-template-areas:
         " about-text about-img";
     background: #f6f6f6;
-    min-height: 400px;
-    box-shadow: var(--shadow);
-    align-items: center;
+    height: 100%;
+    box-shadow: var(--shadow);   
+    justify-content: center;
+    padding: 60px;
 }
 
 .about-text {
@@ -219,8 +308,54 @@ h3 {
 .about-me h3 {
     margin-bottom: 5px;
 }
+/* Default Styles END */
 
-/* IMAGE GALLERY */
+/* Styles for smaller screens BEGIN */
+@media only screen and (max-width: 600px) {
+    .about-me {
+        grid-template-rows: 280px 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "about-img"
+        "about-text";
+        padding: 0;
+        min-height: 600px;
+    }
+
+    .about-me p {
+        margin: 0;
+    }
+
+    .about-img {
+        display: flex;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .about-img img {
+        width: 75%;
+    }
+
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    .about-text h3 {
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+}
+/* Styles for smaller screens END */
+
+
+/* 
+======================================
+           IMAGE GALLERY 
+======================================
+*/
 .gallery {
     grid-area: gallery;
     display: flex;
@@ -366,51 +501,10 @@ p {
 .colored-text {
     color: var(--primary);
 }
+    
 
-/* MEDIA QUERIES */
-@media only screen and (max-width: 600px) {
-    .logo {
-        width: 100%;
-    }
 
-    .header {
-        text-align: center;
-    }
 
-    .main-nav {
-        position: absolute;
-        top: 100%;
-        background: rgba(186, 220, 88, 0.95);
-        display: none;
-        padding-top: 10px;
-    }
-
-    .main-nav li {
-        display: block;
-        font-size: 100%;
-        font-weight: 700;
-    }
-
-    .main-nav a:hover {
-        color: #00A081;
-    }
-
-    .main-nav li:hover {
-        border-bottom: 0;
-        transition: border-bottom 0.3s;
-    }
-
-    .toggle-label {
-        display: flex;
-    }
-
-    .toggle-label:hover {
-        color: #00A081;
-    }
-
-    .nav-toggle:checked~.main-nav {
-        display: block;
-    }
 
 
 }
