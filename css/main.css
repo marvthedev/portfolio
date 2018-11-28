@@ -31,7 +31,6 @@ h2 {
 h2:after {
     display: block;
     height: 2px;
-    background-color: #badc58;
     content: " ";
     width: 100px;
     margin: 0 auto;
@@ -59,19 +58,24 @@ h3 {
 .header {
     grid-area: header;
     display: flex;
-    height: 70px;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
     background: #badc58;
-    padding: 0.25rem;
+    text-align: right;
+    position: fixed;
+    z-index: 999;
 }
 
 /* NAVIGATION LINK ON THE RIGHT */
 .main-nav {
     grid-area: main-nav;
-    list-style: none;
-    margin-left: auto;
+    align-self: center;
     text-transform: uppercase;
+    background: var(--primary);
+    width: 100%;
+}
+
+.main-nav ul {
+    list-style: none;
 }
 
 .main-nav li {
@@ -83,7 +87,7 @@ h3 {
 }
 
 .main-nav li:hover {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #00A081;
     transition: border-bottom 0.3s;
 }
 
@@ -92,10 +96,33 @@ h3 {
     color: white;
 }
 
+.nav-toggle {
+    display: none;
+}
+
+.toggle-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: 125%;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-toggle:checked~.main-nav {
+    display: block;
+}
+
 /* LOGO ON NAVIGATION BAR */
 .logo {
     height: 60px;
     width: 60px;
+    padding: 5px;
 }
 
 .logo img {
@@ -338,4 +365,52 @@ p {
 /* COLOR TEXT WITH PRIMARY COLOR */
 .colored-text {
     color: var(--primary);
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 100%;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        background: rgba(186, 220, 88, 0.95);
+        display: none;
+        padding-top: 10px;
+    }
+
+    .main-nav li {
+        display: block;
+        font-size: 100%;
+        font-weight: 700;
+    }
+
+    .main-nav a:hover {
+        color: #00A081;
+    }
+
+    .main-nav li:hover {
+        border-bottom: 0;
+        transition: border-bottom 0.3s;
+    }
+
+    .toggle-label {
+        display: flex;
+    }
+
+    .toggle-label:hover {
+        color: #00A081;
+    }
+
+    .nav-toggle:checked~.main-nav {
+        display: block;
+    }
+
+
 }
