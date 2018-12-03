@@ -251,7 +251,7 @@ h3 {
 /* Styles for smaller screens BEGIN */
 @media only screen and (max-width: 600px) {
     .hero-container {
-        padding-top: 50px;
+        padding-top: 60px;
     }
 
     .hero-text {
@@ -387,7 +387,12 @@ h3 {
     width: 100%;
 }
 
-/* LATEST WORK */
+/* 
+======================================
+           LATEST WORK PORTFOLIO 
+======================================
+*/
+/* Default Styles START */
 .latest-work {
     grid-area: latest-work;
     display: flex;
@@ -424,8 +429,20 @@ p {
 .work-box p {
     margin-top: 10px;
 }
+/* Default Styles END */
 
-/* FOOTER */
+/* Styles for smaller screens BEGIN */
+@media only screen and (max-width: 600px) {
+    .latest-work p {
+        padding: 10px;
+        text-align: center;
+    }
+}
+/* 
+======================================
+           FOOTER 
+======================================
+*/
 .footer {
     grid-area: footer;
     display: grid;
