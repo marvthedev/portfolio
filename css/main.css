@@ -438,11 +438,15 @@ p {
         text-align: center;
     }
 }
+/* Styles for smaller screens END */
+
 /* 
 ======================================
            FOOTER 
 ======================================
 */
+
+/* Default Styles BEGIN */
 .footer {
     grid-area: footer;
     display: grid;
@@ -454,7 +458,7 @@ p {
         "copyright copyright copyright";
     background: #333;
     color: white;
-    max-height: 100vh;
+    height: 100%;
     padding-top: 40px;
 }
 
@@ -518,10 +522,44 @@ p {
 .colored-text {
     color: var(--primary);
 }
+/* Default Styles END */
+
+/* Styles for smaller screens BEGIN */
+@media only screen and (max-width: 600px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        padding-top: 25px;
+    }
+
+    .footer-about {
+        text-align: center;
+        padding: 10px 10px;
+    }
+
+    .footer-about p,
+    .footer-contact p {
+        margin: 15px;
+    }
+
+    .social-icons p {
+        margin: 10px;
+    }
+
+    .social-icons {
+        text-align: center;
+        margin: 5;
+    }
+
+    .copyright p {
+        padding: 10px;
+        margin: 0;
+    }
+}
+/* Styles for smaller screens END */
     
 
 
 
 
 
-}
