@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Marvin's portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlmarinas/portfolio.git"
+  },
+  "keywords": [
+    "web",
+    "developer"
+  ],
+  "author": "Marvin Marinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlmarinas/portfolio/issues"
+  },
+  "homepage": "https://github.com/mlmarinas/portfolio#readme",
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.2"
+  }
+}
