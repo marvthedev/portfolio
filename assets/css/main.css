@@ -194,7 +194,7 @@ h3 {
     justify-content: center;
     min-height: 400px;
     grid-area: hero;
-    background: url(img/devbg.jpeg);
+    background: url(/images/devbg.jpeg);
     background-size: cover;
     background-position: center;
     box-shadow: var(--shadow);
@@ -458,7 +458,7 @@ p {
         "copyright copyright copyright";
     background: #333;
     color: white;
-    height: 100%;
+    max-height: 450px;
     padding-top: 40px;
 }
 
@@ -479,12 +479,17 @@ p {
 
 .social-icons {
     grid-area: social-icons;
-    margin: 30px 30px;
+    margin: 20px 30px 0 30px;
+    height: 100%;
 }
 
 .copyright {
     grid-area: copyright;
     text-align: center;
+}
+
+.copyright p {
+    margin: 10px;
 }
 
 /* "BACK TO TOP" Link */
@@ -530,6 +535,7 @@ p {
         display: flex;
         flex-direction: column;
         padding-top: 25px;
+        max-height: 100%;
     }
 
     .footer-about {
@@ -540,7 +546,7 @@ p {
     .footer-about p,
     .footer-contact p {
         margin: 15px;
-    }
+    }git
 
     .social-icons p {
         margin: 10px;
@@ -555,6 +561,7 @@ p {
         padding: 10px;
         margin: 0;
     }
+
 }
 /* Styles for smaller screens END */
     

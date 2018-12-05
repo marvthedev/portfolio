@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets\css\main.css" />
     <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
     <div class="grid">
-        <header class="header" id="nav">
+        <header class="header" id="header">
             <!-- LOG0 -->
-            <div class="logo"><img src="css/img/appmartianlogo.png" alt=""></div>
+            <div class="logo"><img src="images\appmartianlogo.png" alt=""></div>
             <!-- NAVIGATION LINKS -->
             <input type="checkbox" class="nav-toggle" id="nav-toggle">
             <label for="nav-toggle" class="toggle-label">
@@ -33,7 +33,7 @@
             </nav>
         </header>
         <!-- HERO -->
-        <section class="hero-container">
+        <section class="hero-container" id="hero">
             <div class="hero-text">
                 <h1>Web Development by Marvin Marinas</h1>
                 <p>Want to work with me? I'm always looking for new projects to work on. Get in touch!</p>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="about-img">
-                <img src="/css/img/frontend.png">
+                <img src="images\frontend.png">
             </div>
         </section>
         <section class="latest-work" id="portfolio">
@@ -65,18 +65,18 @@
             <div class="work-boxes">
                 <div class="work-box">
                     <h3>Portfolio Website</h3>
-                    <img src="css/img/appmartianbox.PNG">
+                    <img src="images\appmartianbox.PNG">
                     <p>My current portfolio that I am actively working and is under the brand "AppMartian."</p>
                 </div>
                 <div class="work-box">
                     <h3>Gauntletcode</h3>
-                    <img src="css/img/gauntletcodebox.PNG">
+                    <img src="images\gauntletcodebox.PNG">
                     <p>The first version of my portfolio website landing page. It was made using HTML and CSS Flexbox.</p>
                 </div>
                 <div class="work-box">
                     <h3>ToDo List</h3>
                     <a href="/ToDoList/todolist.html">
-                        <img src="css/img/todobox.jpg">
+                        <img src="images\todobox.jpg">
                     </a>
                     <p>A simple ToDo web application in a flat design. It was made using HTML, CSS, and JavaScript. You
                         can add, remove, and cross out ToDos.</p>
@@ -128,7 +128,7 @@
             </div>
             <div class="copyright">
                 <p>Copyright 2018 &copy; <b class=colored-text>AppMartian</b></p>
-                <p><a href="index.html#nav">Back to the Top</a></p>
+                <a href="index.html#hero">Back to the Top</a>
 
             </div>
         </section>
@@ -137,3 +137,5 @@
 </body>
 
 </html>
+
+
